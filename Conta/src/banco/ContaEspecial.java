@@ -7,7 +7,7 @@ public class ContaEspecial extends ContaCorrente {
         super(numeroConta, nomeCliente, cpf);      
         this.gerenteResponsavel = gerenteResponsavel;
     }
-    
+     
     public ContaEspecial(String numeroConta, String nomeCliente, String cpf, String gerenteResponsavel,
                         float limite) {
         super(numeroConta, nomeCliente, cpf, limite);      

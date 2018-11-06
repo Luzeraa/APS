@@ -8,11 +8,19 @@ public class ContaCorrente extends Conta {
         super(numeroConta, nomeCliente, cpf);      
     }
     
-    public ContaCorrente(String numeroConta, String nomeCliente, String cpf,
-                         float saldo, float limite) {
+    public ContaCorrente(String numeroConta, String nomeCliente, String cpf, float limite) {
         super(numeroConta, nomeCliente, cpf);
         this.limite = limite;
     }
+
+    public double getLimite() {
+        return limite;
+    }
+ 
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
+    
     
     
     @Override

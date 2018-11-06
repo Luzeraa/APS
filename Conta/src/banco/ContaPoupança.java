@@ -4,11 +4,10 @@ package banco;
 public class ContaPoupança extends Conta {
     
     
-     public ContaPoupança(String numeroConta, String nomeCliente, String cpf,
-                         float saldo) {
-        super(numeroConta, nomeCliente, cpf, saldo);      
+     public ContaPoupança(String numeroConta, String nomeCliente, String cpf) {
+        super(numeroConta, nomeCliente, cpf);      
     }
-    
+     
     public void calculaRendimento(float porcentagem){
         float rendimento;
         rendimento = super.getSaldo() * porcentagem;
