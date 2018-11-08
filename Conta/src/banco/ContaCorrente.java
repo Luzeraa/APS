@@ -3,12 +3,14 @@ package banco;
 public class ContaCorrente extends Conta {
 
     private double limite;
-
-    public ContaCorrente(String numeroConta, String nomeCliente, String cpf) {
-        super(numeroConta, nomeCliente, cpf);      
-    }
     
-    public ContaCorrente(String numeroConta, String nomeCliente, String cpf, float limite) {
+    public ContaCorrente(int numeroConta, String nomeCliente, String cpf,
+            String gerenteResponsavel) {
+        super(numeroConta, nomeCliente, cpf);      
+    } 
+    
+    public ContaCorrente(int numeroConta, String nomeCliente, String cpf, float limite,
+                String gerenteResponsavel) {
         super(numeroConta, nomeCliente, cpf);
         this.limite = limite;
     }
@@ -20,9 +22,7 @@ public class ContaCorrente extends Conta {
     public void setLimite(double limite) {
         this.limite = limite;
     }
-    
-    
-    
+     
     @Override
     public boolean sacar(float valor){ 
        if((valor <= (super.getSaldo()+ limite) ) ){
@@ -32,12 +32,7 @@ public class ContaCorrente extends Conta {
            return false;
        }
     }
-       
-    @Override
-    public String getNumeroConta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+      
     @Override
     public String imprimir(){
         return "Titular: " + getNomeCliente() + "Nº conta: " + getNumeroConta() +"\n"
@@ -51,6 +46,4 @@ public class ContaCorrente extends Conta {
             return false;
         }
     }
-
-
 }

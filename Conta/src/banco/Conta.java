@@ -2,49 +2,49 @@ package banco;
 
 public abstract class Conta {
 
-    private String numeroConta;
+    private int numeroConta;
     private String nomeCliente;
     private String cpf;
     private float saldo;
-
+ 
     public Conta() {
-        this.numeroConta = "Nao informado";
+        this.numeroConta = 0;
         this.nomeCliente = "Nao informado";
         this.cpf = "Nao informado";
     }
- 
-    public Conta(String numeroConta, String nomeCliente, String cpf) {
+
+    public Conta(int numeroConta, String nomeCliente, String cpf) {
         this.numeroConta = numeroConta;
         this.nomeCliente = nomeCliente;
         this.cpf = cpf;
     }
 
-    public String getNumeroConta(){
+    public int getNumeroConta() {
         return numeroConta;
+    }
+
+    private void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
     public String getNomeCliente() {
         return nomeCliente;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public float getSaldo() {
-        return saldo;
-    }
-
-    private void setNumeroConta(String numeroConta) {
-        this.numeroConta = numeroConta;
-    }
-
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
     private void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public float getSaldo() {
+        return saldo;
     }
 
     private void setSaldo(float saldo) {
