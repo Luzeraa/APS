@@ -9,7 +9,7 @@ public class GerenciarContas {
     public void adicionarConta(Conta c) {
         lista.add(c);
     }
-
+ 
     public boolean removerConta(int numeroConta) {
         for (Conta conta : lista) {
             if (numeroConta == conta.getNumeroConta()) {
@@ -56,39 +56,54 @@ public class GerenciarContas {
         }
         return null;
     }
- 
-   public boolean transferirValor(int numeroContaOrigem,int numeroContaDestino,
-                                  double valor){
 
-       for (Conta conta : lista) {
-           if(conta.getNumeroConta() == numeroContaOrigem){
-               
-           }
-       }
-   }
+    public boolean transferirValor(int numeroContaOrigem, int numeroContaDestino,
+            float valor) {
 
+        Conta c1 = buscarConta(numeroContaOrigem);
+        Conta c2 = buscarConta(numeroContaDestino);
+        if (c1 != null && c2 != null) {
+            if (c1.getSaldo() >= valor) {
+                if (c1 instanceof ContaCorrente) {
+                    c1.sacar(valor);
+                    c2.depositar(valor);
+                } else {
+                    c1.sacar(valor);
+                    c2.depositar(valor);
+                }
+                return true;
+            }
 
+        }
+        return false;
+    }
 
+    public boolean sacar(int numeroConta, float valorSacado) {
+        Conta c = buscarConta(numeroConta);
 
+        if (c != null) {
+            c.sacar(valorSacado);
+            return true;
+        }
+        return false;
 
+    }
 
+    public boolean depositar(int numeroConta, float valorDepositado) {
+        Conta c = buscarConta(numeroConta);
 
+        if (c != null) {
+            c.depositar(valorDepositado);
+            return true;
+        }
+        return false;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public String listarContas() {
+        for (Conta conta : lista) {
+            return conta.imprimir();
+        }
+        return null;
+    }
 
 }
-    
- 

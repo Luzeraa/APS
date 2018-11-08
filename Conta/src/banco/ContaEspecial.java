@@ -1,5 +1,5 @@
 package banco;
-
+ 
 public class ContaEspecial extends ContaCorrente {
     private String gerenteResponsavel;
 
@@ -24,6 +24,24 @@ public class ContaEspecial extends ContaCorrente {
         this.gerenteResponsavel = gerenteResponsavel;
     }
     
+    
+    @Override
+    public boolean sacar(float valor) {
+        if ((super.getSaldo() - valor) >= 0) {
+            super.sacar(valor);
+            return true;
+        } 
+            return false;
+    }
+
+    @Override
+    public boolean depositar(float valor) {
+        if (valor >= 0) {
+            super.depositar(valor);
+            return true;
+        } 
+            return false;
+    }
     
      @Override
     public String imprimir(){
