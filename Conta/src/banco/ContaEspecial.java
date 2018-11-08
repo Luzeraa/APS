@@ -1,5 +1,5 @@
 package banco;
- 
+  
 public class ContaEspecial extends ContaCorrente {
     private String gerenteResponsavel;
 

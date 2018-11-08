@@ -1,7 +1,7 @@
 package banco;
 
 import java.util.ArrayList;
-
+ 
 public class GerenciarContas {
 
     private ArrayList<Conta> lista = new ArrayList<>();
