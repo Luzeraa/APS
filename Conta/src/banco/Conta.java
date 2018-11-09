@@ -1,7 +1,7 @@
 package banco;
   
 public abstract class Conta {
-
+ 
     private int numeroConta;
     private String nomeCliente;
     private String cpf;
