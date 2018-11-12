@@ -2,7 +2,7 @@ package banco;
    
 public class ContaEspecial extends ContaCorrente {
     private String gerenteResponsavel;
-
+ 
     public ContaEspecial(int numeroConta, String nomeCliente, String cpf, String gerenteResponsavel) {
         super(numeroConta, nomeCliente, cpf, gerenteResponsavel);      
         this.gerenteResponsavel = gerenteResponsavel;

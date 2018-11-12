@@ -20,18 +20,17 @@ public class GerenciarContas {
         }
         return false;
     }
- 
+  
     public String buscarContaEspecial() {
-        String ce;
         int contador = 0;
-        for (Conta conta : lista) {
-            
-            if (conta instanceof ContaEspecial) {
+        for (int i = 0; i < lista.size(); i++) {
+            Conta c = lista.get(i);
+            if(c instanceof ContaEspecial){
                 contador++;
-                return "O total de contas especiais eh" + contador + "\n";
+                       
             }
-        }
-        return "O total de contas especiais eh" + contador;
+        } return "Contas especiais: " + contador;
+        
     }
 
     public String buscarClientesUsandoLimite() {

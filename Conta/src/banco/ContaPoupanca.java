@@ -2,7 +2,7 @@ package banco;
  
  
 public class ContaPoupanca extends Conta {
-     
+      
     
      public ContaPoupanca(int numeroConta, String nomeCliente, String cpf) {
         super(numeroConta, nomeCliente, cpf);      
