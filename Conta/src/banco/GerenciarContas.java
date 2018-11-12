@@ -1,7 +1,7 @@
 package banco;
 
 import java.util.ArrayList;
- 
+
 public class GerenciarContas {
 
     private ArrayList<Conta> lista = new ArrayList<>();
@@ -9,26 +9,26 @@ public class GerenciarContas {
     public void adicionarConta(Conta c) {
         lista.add(c);
     }
- 
+
     public boolean removerConta(int numeroConta) {
-        for (Conta conta : lista) {
-            if (numeroConta == conta.getNumeroConta()) {
-                lista.remove(conta);
-            }
-            return true;
+        for (int i = 0; i < lista.size(); i++) {
+            Conta c = lista.get(i);
+            if (c.getNumeroConta() == numeroConta) {
+                lista.remove(c);
+                return true;
+            }        
         }
         return false;
     }
-
+ 
     public String buscarContaEspecial() {
         String ce;
         int contador = 0;
         for (Conta conta : lista) {
-            contador++;
+            
             if (conta instanceof ContaEspecial) {
-                ce = conta.imprimir();
-                return "O total de contas especiais eh" + contador + "\n"
-                        + ce;
+                contador++;
+                return "O total de contas especiais eh" + contador + "\n";
             }
         }
         return "O total de contas especiais eh" + contador;
@@ -100,10 +100,11 @@ public class GerenciarContas {
     }
 
     public String listarContas() {
+        String saida = "";
         for (Conta conta : lista) {
-            return conta.imprimir();
+            saida += conta.imprimir() + "\n";
         }
-        return null;
+        return saida;
     }
 
 }

@@ -1,5 +1,5 @@
 package banco;
-  
+   
 public abstract class Conta {
  
     private int numeroConta;
@@ -70,7 +70,7 @@ public abstract class Conta {
     }
 
     public String imprimir() {
-        return "Titular: " + nomeCliente + "Nº conta: " + numeroConta + "\n"
-                + "CPF: " + cpf + "Saldo: " + saldo;
+        return "Titular: " + nomeCliente + "\n Nº conta: " + numeroConta + "\n"
+                + " CPF: " + cpf + "\n Saldo: " + saldo + "\n";
     }
 }

@@ -32,11 +32,11 @@ public class ContaCorrente extends Conta {
            return false;
        }
     }
-      
+       
     @Override
     public String imprimir(){
-        return "Titular: " + getNomeCliente() + "Nº conta: " + getNumeroConta() +"\n"
-        + "CPF: " + getCpf() + "Saldo: " + getSaldo() + "Limite: " + limite;
+        return "Titular: " + getNomeCliente() + "\nNº conta: " + getNumeroConta() + "\nCPF: " 
+                + getCpf() + "\nSaldo: " + getSaldo() + "\nLimite: " + limite + "\n";
     }
     
     public boolean usandoLimite(float saque){

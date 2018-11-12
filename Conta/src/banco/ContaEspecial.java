@@ -1,5 +1,5 @@
 package banco;
-  
+   
 public class ContaEspecial extends ContaCorrente {
     private String gerenteResponsavel;
 
@@ -8,8 +8,7 @@ public class ContaEspecial extends ContaCorrente {
         this.gerenteResponsavel = gerenteResponsavel;
     }
       
-    public ContaEspecial(int numeroConta, String nomeCliente, String cpf, String gerenteResponsavel,
-                        float limite) {
+    public ContaEspecial(int numeroConta, String nomeCliente, String cpf,float limite, String gerenteResponsavel) {
         super(numeroConta, nomeCliente, cpf, limite, gerenteResponsavel);      
         this.gerenteResponsavel = gerenteResponsavel;
     }
@@ -45,9 +44,8 @@ public class ContaEspecial extends ContaCorrente {
     
      @Override
     public String imprimir(){
-        return "Titular: " + getNomeCliente() + "Nº conta: " + getNumeroConta() +"\n"
-        + "CPF: " + getCpf() + "Saldo: " + getSaldo() + "Limite: " + getLimite() + "\n"
-        + "Gerente responsável: " + gerenteResponsavel;
+        return "Titular: " + getNomeCliente() + "\nNº conta: " + getNumeroConta() +"\nCPF: " + getCpf() + "\nSaldo: " 
+                        + getSaldo() + "\nLimite: " + getLimite() + "\nGerente responsável: " + gerenteResponsavel +"\n";
     }
     
     
