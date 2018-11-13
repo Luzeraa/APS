@@ -102,11 +102,19 @@ public class Principal {
                     System.out.println("Digite o numero da conta que deseja remover: ");
                     numeroConta = input.nextInt();
                     lista.removerConta(numeroConta);
-                    break;
+                    break; 
                 case 3:
                     System.out.println(lista.buscarContaEspecial());
                     break;
                 case 4:
+                    System.out.println(lista.buscarClientesUsandoLimite());
+                    break;
+                case 5:
+                    System.out.println("Digite o numero da conta que deseja buscar: ");
+                    numeroConta = input.nextInt();
+                    System.out.println(lista.buscarConta(numeroConta));
+                    break;
+                case 6:
                     System.out.println(lista.listarContas());
                     System.out.println(" ");
                     break;

@@ -16,44 +16,46 @@ public class GerenciarContas {
             if (c.getNumeroConta() == numeroConta) {
                 lista.remove(c);
                 return true;
-            }        
+            }
         }
         return false;
     }
-  
+
     public String buscarContaEspecial() {
-        int contador = 0;
+        int contador = 0;      
         for (int i = 0; i < lista.size(); i++) {
             Conta c = lista.get(i);
-            if(c instanceof ContaEspecial){
+            if (c instanceof ContaEspecial) {     
                 contador++;
-                       
+                
             }
-        } return "Contas especiais: " + contador;
-        
+
+        }
+        return "Contas especiais: " + contador;
+
     }
 
     public String buscarClientesUsandoLimite() {
-        String ce;
-        int contador = 0;
-        for (Conta conta : lista) {
-            contador++;
-            if (conta instanceof ContaCorrente) {
-                ce = conta.imprimir();
-                return "O total de contas corrente eh: " + contador + "\n"
-                        + ce;
-            }
+       int contador = 0;      
+        for (int i = 0; i < lista.size(); i++) {
+            Conta c = lista.get(i);
+            if (c instanceof ContaCorrente) {
+                if(c.getSaldo() <0){ 
+                contador++;
+                
+                }
+            }   c.imprimir();      
         }
-        return "O total de contas corrente eh: " + contador;
+        return "Contas corrente utilizando limite: " + contador;
     }
 
     public Conta buscarConta(int numeroConta) {
         for (Conta conta : lista) {
-            if (conta.getNumeroConta() == numeroConta) {
+            if(conta.getNumeroConta() == numeroConta){
                 return conta;
             }
         }
-        return null;
+     return null;
     }
 
     public boolean transferirValor(int numeroContaOrigem, int numeroContaDestino,
